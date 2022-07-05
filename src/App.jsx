@@ -1,21 +1,18 @@
-import React, { Component } from "react";
 import "./App.css";
+import dayjs from "dayjs";
+import { Tasks } from "./components/Tasks"
 
-class App extends Component {
-  render() {
-    return (
-      <main
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          textAlign: "center",
-        }}
-      >
-        <h1>React Hooks</h1>
-      </main>
-    );
-  }
+function App() {
+  return (
+    <div className="container">
+      <header className="d-flex justify-content-between my-4 bg-dark text-light">
+        <span>Today</span>
+        <span>{dayjs().format("MMM DD, YYYY")}</span>
+      </header>
+
+      <Tasks />
+    </div>
+  );
 }
 
 export default App;
